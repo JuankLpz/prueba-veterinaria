@@ -36,7 +36,11 @@ Route::delete('/veterinarios/{veterinario}',[VeterinarioController::class,'destr
 
 Route::get('/agenda',[CitasController::class,'index'])->name('agenda');
 Route::get('/agenda/create',[CitasController::class,'create'])->name('agenda.create');
+Route::get('/agenda/{cita}/edit',[CitasController::class,'edit'])->name('agenda.edit');
+
 Route::post('/agenda/create',[CitasController::class,'store']);
+Route::put('/agenda/cancel/{cita}',[CitasController::class,'cancelar'])->name('agenda.cancel');
+Route::put('/agenda/{cita}',[CitasController::class,'update'])->name('agenda.update');
 
 
 Route::get('/', function () {

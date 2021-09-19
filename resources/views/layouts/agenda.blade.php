@@ -13,11 +13,11 @@
         </div>
 
       <div class="justify-left">
-                <a  href="{{route('agenda.create')}}" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Crear</a>
+                <a  href="{{route('agenda.create')}}" class="bg-white text-gray-800 font-bold rounded border-b-2 border-green-500 hover:border-green-600 hover:bg-green-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center">Crear Cita</a>
             </div>
       </div>
       @foreach ($citas as $cita)
-      <div class="flex flex-wrap mt-12 justify-center">
+      <div class="flex flex-wrap mt-12 justify-center divide-y-4 divide-black divide-opacity-25"">
         <div class="grid grid-cols-1 sm:grid-cols-6 md:grid-cols-6 lg:grid-cols-6 xl:grid-cols-6 gap-4">
           <div class="col-span-2 sm:col-span-1 xl:col-span-1">
             <img
@@ -29,11 +29,19 @@
           <div class="col-span-2 sm:col-span-4 xl:col-span-4">
             <h3 class="font-semibold text-black">{{$cita->date}}</h3>
             <p>
-              Cita agendada con el meedico {{$cita->veterinario->name}}.
+              Cita agendada con el medico {{$cita->veterinario->name}}.
             </p>
           </div>
           <div class="col-span-2 sm:col-span-1 xl:col-span-1 italic ">
-          <a href="#" class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"> Editar</a>
+            <a href="{{route('agenda.edit',$cita)}}" class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"> Editar</a>
+            
+            <form action="{{route('agenda.cancel', $cita)}}" method="post">
+                  @csrf
+                  @method('put')
+                  <button type="submit"  class="bg-white text-gray-800 font-bold rounded border-b-2 border-red-500 hover:border-red-600 hover:bg-red-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"> 
+                    Cancelar
+                  </button>
+            </form>
           </div>
         </div>
         @endforeach
