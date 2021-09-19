@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\VeterinarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,15 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'store']);
+
+Route::get('/veterinarios',[VeterinarioController::class,'index'])->name('veterinarios');
+Route::get('/veterinarios/create',[VeterinarioController::class,'create'])->name('veterinarios.create');
+Route::post('/veterinarios/create',[VeterinarioController::class,'store']);
+Route::get('/veterinarios/{veterinario}/edit',[VeterinarioController::class,'edit'])->name('veterinarios.edit');
+Route::put('/veterinarios/{veterinario}',[VeterinarioController::class,'update'])->name('veterinarios.update');
+Route::delete('/veterinarios/{veterinario}',[VeterinarioController::class,'destroy'])->name('veterinarios.destroy');
+
+
 Route::get('/', function () {
     return view('layouts.app');
 })->name('home');

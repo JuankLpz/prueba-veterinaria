@@ -9,14 +9,16 @@
 </head>
 <body>
     
-<nav class="p-6 bg-red flex bg-gray-50 justify-between">
+<nav class="p-6 bg-red flex bg-gray-100 justify-between">
     <ul class="flex items-center">
         <li>
             <a class="p-3" href="{{ route('home')}}"> Home</a>
         </li>
         <li>
-        <a class="p-3" href="{{ route('agenda')}}"> Agenda</a>
-
+            <a class="p-3" href="{{ route('agenda')}}"> Agenda</a>
+        </li>
+        <li>
+            <a class="p-3" href="{{ route('veterinarios')}}"> Veterinarios</a>
         </li>
     </ul>
     <ul class="flex items-center">
