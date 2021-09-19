@@ -11,7 +11,7 @@ class Citas extends Model
 
     //one2Many veterinario y citas inversa
     public function veterinario(){
-        return $this->belongsTo('App\Models\Verinario');
+        return $this->belongsTo('App\Models\Veterinario');
     }
     //one2Many veterinario y citas inversa
     public function agenda(){

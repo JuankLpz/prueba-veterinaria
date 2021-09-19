@@ -17,9 +17,7 @@
         
                         <div class="h-30 w-48 bg-gray-100 rounded"><span> {{$veterinario->name}}</span></div>
                         <div >
-                            
                                <a href="{{route('veterinarios.edit',$veterinario)}}" class="bg-white text-gray-800 font-bold rounded border-b-2 border-yellow-500 hover:border-yellow-600 hover:bg-yellow-500 hover:text-white shadow-md py-2 px-6 inline-flex items-center"> Editar</a>
-                            
                         </div>
                         <div >
                             <form action="{{route('veterinarios.destroy', $veterinario)}}" method="post">
@@ -36,7 +34,6 @@
                     </div>
                 </div>
                 @endforeach
-     
     </div>
   </div>
 </div>

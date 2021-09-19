@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Agenda;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -11,7 +12,7 @@ class AgendaController extends Controller
         $this->middleware(['auth']);
     }
     public function index(){
-
-        return view('layouts.agenda');
+        $agenda= Agenda::paginate();
+        return view('layouts.agenda',compact('agenda'));
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\AgendaController;
+use App\Http\Controllers\CitasController;
 use App\Http\Controllers\VeterinarioController;
 
 /*
@@ -18,7 +19,6 @@ use App\Http\Controllers\VeterinarioController;
 |
 */
 
-Route::get('/agenda',[AgendaController::class,'index'])->name('agenda');
 Route::get('/login',[LoginController::class,'index'])->name('login');
 
 Route::post('/login',[LoginController::class,'store']);
@@ -33,6 +33,10 @@ Route::post('/veterinarios/create',[VeterinarioController::class,'store']);
 Route::get('/veterinarios/{veterinario}/edit',[VeterinarioController::class,'edit'])->name('veterinarios.edit');
 Route::put('/veterinarios/{veterinario}',[VeterinarioController::class,'update'])->name('veterinarios.update');
 Route::delete('/veterinarios/{veterinario}',[VeterinarioController::class,'destroy'])->name('veterinarios.destroy');
+
+Route::get('/agenda',[CitasController::class,'index'])->name('agenda');
+Route::get('/agenda/create',[CitasController::class,'create'])->name('agenda.create');
+Route::post('/agenda/create',[CitasController::class,'store']);
 
 
 Route::get('/', function () {
