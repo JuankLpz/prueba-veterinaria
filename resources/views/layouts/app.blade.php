@@ -15,7 +15,7 @@
             <a class="p-3" href="{{ route('home')}}"> Home</a>
         </li>
         <li>
-        <a class="p-3" href=""> Agenda</a>
+        <a class="p-3" href="{{ route('agenda')}}"> Agenda</a>
 
         </li>
     </ul>

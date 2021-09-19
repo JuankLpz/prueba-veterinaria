@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\AgendaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,9 @@ use App\Http\Controllers\Auth\LogoutController;
 |
 */
 
+Route::get('/agenda',[AgendaController::class,'index'])->name('agenda');
 Route::get('/login',[LoginController::class,'index'])->name('login');
+
 Route::post('/login',[LoginController::class,'store']);
 Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 
