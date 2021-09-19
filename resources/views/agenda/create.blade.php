@@ -28,7 +28,8 @@
                     
             </div>
                     <br>
-                    <label>Veterinario</label>
+                    <br>
+                    <label>Veterinario:</label>
             <select name="veterinario">
                 @foreach($veterinarios as $veterinario)
                 <option value="{{$veterinario->id}}" >
@@ -36,6 +37,8 @@
                 </option>
                 @endforeach
             </select>
+            <br>
+                    <br>
             <label>Descripcion</label>
                     <textarea 
                     class="block border border-grey-light w-full p-3 rounded mb-4 @error('descripcion') border-red-500 @enderror"

@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\CitasController;
 use App\Http\Controllers\VeterinarioController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ use App\Http\Controllers\VeterinarioController;
 |
 */
 
+Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/login',[LoginController::class,'index'])->name('login');
 
 Route::post('/login',[LoginController::class,'store']);
@@ -43,6 +45,3 @@ Route::put('/agenda/cancel/{cita}',[CitasController::class,'cancelar'])->name('a
 Route::put('/agenda/{cita}',[CitasController::class,'update'])->name('agenda.update');
 
 
-Route::get('/', function () {
-    return view('layouts.app');
-})->name('home');
